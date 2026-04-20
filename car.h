@@ -6,7 +6,7 @@
 #include "color.h"
 
 class Car{
-protected:
+private:
     unsigned long m_ID;
     std::string m_Mark;
     std::string m_Model;

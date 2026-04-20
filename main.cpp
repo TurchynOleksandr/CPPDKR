@@ -1,16 +1,20 @@
 #include <iostream>
 #include <fstream>
-#include <list>
+#include <vector>
 #include "car.h"
+#include "cariocontroller.h"
 
 int main(){
-    /*std::ofstream fout("cars.txt");
-    Car car1;
-    Car car2(1,"Renault","Scenic",2007,Color(0,0,0),320000,"AP1235AA");
-    Car car3(2,"Land rover","Range rover",2020,Color(0,0,0),2600000,"AP1236AA");
-    fout<<car1<<car2<<car3;*/
-    std::ifstream fin("cars.txt");
-    Car car1,car2,car3;
-    fin >> car1 >> car2 >> car3;
-    std::cout << car1 << car2 << car3;
+    CarIOController fController("cars.txt",5);
+    std::vector<Car> car_vector;    
+    car_vector = fController.readCars(true);
+
+    //Car car1(3,"Daewoo","Lanos",2000,Color(0,255,0),100000,"AP1236AA");
+    //car_vector.push_back(car1); 
+
+    //fController.writeCars(car_vector,true);
+    //car_vector = fController.readCars(true);
+    //fController.writeCars(car_vector);
+
+    fController.writeCars(car_vector,std::cout,false);
 }
