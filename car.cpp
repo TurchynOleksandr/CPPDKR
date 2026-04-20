@@ -92,7 +92,10 @@ std::istream& operator >>(std::istream& fin, Car& car){
     std::getline(fin,temp);
 
     std::getline(fin,mark);
+    if (!mark.empty() && mark.back() == '\r') mark.pop_back();
+
     std::getline(fin,model);
+    if (!model.empty() && model.back() == '\r') model.pop_back();
 
     fin >> year;
     fin >> color;
