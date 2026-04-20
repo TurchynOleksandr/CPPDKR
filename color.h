@@ -1,6 +1,9 @@
 #ifndef COLOR_H_
 #define COLOR_H_
 
+#include <iostream>
+#include <string>
+
 class Color{
 protected:
     unsigned char m_Red;
@@ -14,6 +17,11 @@ public:
     unsigned char getRed();
     unsigned char getGreen();
     unsigned char getBlue();
+    std::string toString();
 };
+
+std::ostream& operator <<(std::ostream& out,Color& color);
+
+std::istream& operator >>(std::istream& fin,Color& color);
 
 #endif

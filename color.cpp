@@ -25,3 +25,30 @@ unsigned char Color::getGreen(){
 unsigned char Color::getBlue(){
     return m_Blue;
 }
+
+std::string Color::toString(){
+    return std::string("[")+
+           std::to_string(m_Red)+
+           std::string(" ")+
+           std::to_string(m_Green)+
+           std::string(" ")+
+           std::to_string(m_Blue)+
+           std::string("]");
+}
+
+std::istream& operator >>(std::istream& fin,Color& color){
+    char bracket1,bracket2;
+    unsigned int red,green,blue;
+    fin >> bracket1 >> red >> green >> blue >> bracket2;
+    if( bracket1 == '[' && bracket2 == ']' ){
+        color.setRed(red);
+        color.setGreen(green);
+        color.setBlue(blue);
+    }
+    return fin;
+}
+
+std::ostream& operator <<(std::ostream& out,Color& color){
+    out<<color.toString();
+    return out;
+}

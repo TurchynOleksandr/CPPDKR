@@ -1,0 +1,21 @@
+0
+ZAZ
+ZAZ-966
+1967
+[255 255 255]
+7000
+AP1234AA
+1
+Renault
+Scenic
+2007
+[0 0 0]
+320000
+AP1235AA
+2
+Land rover
+Range rover
+2020
+[0 0 0]
+2600000
+AP1236AA
